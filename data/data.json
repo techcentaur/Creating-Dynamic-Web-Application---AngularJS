@@ -1,0 +1,66 @@
+[{
+	"entryyear":2016,
+	"name":"filius flitwick",
+	"hostel":"kirland",
+	"department":"cs",
+	"details": {
+		"jeerank":140,
+		"age":17
+	},
+	"image":"img1"
+},
+{
+	"entryyear":2016,
+	"name":"Pius Thicknesse",
+	"hostel":"Phoenix",
+	"department":"cs",
+	"details": {
+		"jeerank":63,
+		"age":18
+	},
+	"image":"img2"
+},
+{
+	"entryyear":2016,
+	"name":"Rmeus Lupin",
+	"hostel":"Homeland",
+	"department":"cs",
+	"details": {
+		"jeerank":141,
+		"age":19
+	},
+	"image":"img3"
+},
+{
+	"entryyear":2016,
+	"name":"Nymphadora tonks",
+	"hostel":"openaire",
+	"department":"chemical",
+	"details": {
+		"jeerank":400,
+		"age":18
+	},
+	"image":"img4"
+},
+{
+	"entryyear":2016,
+	"name":"Grindewald",
+	"hostel":"Harvard",
+	"department":"chemical",
+	"details": {
+		"jeerank":450,
+		"age":20
+	},
+	"image":"img5"
+},{
+	"entryyear":2016,
+	"name":"Ollivander",
+	"hostel":"Kirkland",
+	"department":"Cs",
+	"details": {
+		"jeerank": 130,
+		"age": 18
+	},
+	"image":"img6"
+}
+]
