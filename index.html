@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ng-cribs</title>
+	<link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body ng-app="ngCribs" ng-controller="cribsController">
+
+<!-- Nav bar -->
+<nav class="navbar navbar-defaut">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">ng-cribs</a>
+		</div>
+	</div>
+</nav>
+
+
+<!-- adding information of new student-->
+<button ng-click="addInfo = !addInfo" ng-show="!addInfo">Add Student Information</button>
+<button ng-click="addInfo = !addInfo" ng-show="addInfo">Close</button>
+
+
+<div class="listing-form" ng-if="addInfo">
+	<h3>Add a Student info</h3>
+	<span class="input-group-addon">Department</span>
+	<input class="form-control" placeholder="enter department" type="text" ng-model="newInfo.department">
+
+	<span class="input-group-addon">Name</span>
+	<input class="form-control" type="text" placeholder="your name here" ng-model="newInfo.name">
+
+	<span class="input-group-addon">Entry Year</span>
+	<input class="form-control" ng-model="newInfo.entryyear" placeholder="entryyear here" type="text">
+<button ng-click="addCrib(newInfo)" ng-show="addInfo">Add</button>
+<pre>{{newInfo | json}}</pre>
+</div>
+
+
+<!-- student information listing -->
+<div class="container">
+	<div class="col-sm-4" ng-repeat="crib in cribs">
+		<div class="thumbnail">
+			<img ng-src="images/{{crib.image}}.jpg" />
+			<div class="caption">
+			<div ng-hide="showDetails===true">
+				<h3>{{crib.department}}</h3>
+				<p><strong>Name:</strong>{{crib.name}}</p>
+				<p><strong>Entry Year:</strong>{{crib.entryyear}}</p>
+				<p><strong>hostel:</strong>{{crib.hostel}}</p>
+				</div>
+
+				<button class="btn btn-xs btn-success" ng-hide="showDetails===true" ng-click="showDetails =! showDetails">Details</button>
+
+				<button class="btn btn-xs btn-danger" ng-show="showDetails===true" ng-click="showDetails =! showDetails">Close</button>
+
+				<div class="details" ng-show="showDetails===true">
+					<h4>
+						<span class="label-primary label">JEE Rank: {{crib.details.jeerank}}</span>
+						<span class="label-primary label">age: {{crib.details.age}}</span>
+					</h4>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+<script src="app.js"></script>
+<script src="scripts/cribsController.js"></script>
+<script src="scripts/cribsFactory.js"></script>
+<script src="scripts/cribsFilter.js"></script>
+
+</html>
